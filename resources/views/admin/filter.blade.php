@@ -8,7 +8,7 @@
                 {{Form::date('date', \Carbon\Carbon::now(), ['class' => 'form-control', 'id' => 'date'])}}
             </div>
         </div>
-        @if(authrole())
+        @if(Auth::user()->role == '1')
             {{Form::hidden('users', 'all', ['id' => 'users', 'class' => 'form-control'])}}
         @else
             {{Form::hidden('users', auth()->user()->id, ['id' => 'users', 'class' => 'form-control'])}}

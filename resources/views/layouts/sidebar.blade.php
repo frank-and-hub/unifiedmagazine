@@ -6,7 +6,7 @@
           <span>Dashboard</span>
         </a>
       </li>
-      @if(authrole())
+      @if(Auth::user()->role == '1')
       <li class="nav-item">
         <a class="nav-link {{ (in_array(request()->path(),['user/create','user'])) ? '' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-person"></i><span>User Management</span><i class="bi bi-chevron-down ms-auto"></i>

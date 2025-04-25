@@ -15,8 +15,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @else
     @include('layouts.css')
-    <script src="{{ asset('js/coustom.js') }}" defer></script> 
-    <style src="{{ asset('css/coustom.css') }}"></stype> 
+        <script src="{{ asset('js/coustom.js') }}" defer></script>
+        <style src="{{ asset('css/coustom.css') }}"></style>
     @endguest
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -37,7 +37,7 @@
                     </a>
                     <i class="bi bi-list toggle-sidebar-btn"></i>
                 </div>
-                @include('layouts.nav')            
+                @include('layouts.nav')
             </header>
             @include('layouts.sidebar')
             <main class="py-4 main" id="main">
@@ -45,10 +45,11 @@
                     @include('layouts.alert')
                     <nav>
                         <ol class="breadcrumb">
-                            @if(url_last(url()->current()) != 'home')
+                            @php $newUrl = url()->current(); @endphp
+                            @if(collect(explode('/', $newUrl))->last() != 'home')
                                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                             @endif
-                            <li class="breadcrumb-item active"><a href="{{ url_last(url()->current()) }}">{{ ucwords(url_last(url()->current())) }}</a></li>
+                            <li class="breadcrumb-item active"><a href="{{ collect(explode('/', $newUrl))->last() }}">{{ ucwords(collect(explode('/', $newUrl))->last()) }}</a></li>
                         </ol>
                     </nav>
                 </div>

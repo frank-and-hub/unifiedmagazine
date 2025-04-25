@@ -15,7 +15,7 @@ $status = [
         <div class="card-body">
             <div class="row">
                 <div class="form-row">
-                    <div class="container">    
+                    <div class="container">
                         <table class="table" id="send_email_list_table">
                             <thead>
                                 <tr>
@@ -24,7 +24,7 @@ $status = [
                                     <th scope="col-2" >Totla Email</th>
                                     <th scope="col-2" >Send Email</th>
                                     <th scope="col-2" >CSV</th>
-                                    @if(authrole())
+                                    @if(Auth::user()->role == '1')
                                     <th scope="col-2" >Email Id</th>
                                     @endif
                                 </tr>
@@ -47,7 +47,7 @@ $status = [
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" id="model_email">
-            
+
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

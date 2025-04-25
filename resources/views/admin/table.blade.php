@@ -7,7 +7,7 @@
         <td>{{$val['email_count']??''}}</td>
         <td>{{$val['sent_email_count']??'0'}}</td>
         <td>{{$val['file_name']??''}}</td>
-        @if(authrole())
+        @if(Auth::user()->role == '1')
         <th>{{$val['user_email']??''}}</th>
         @endif
     </tr>

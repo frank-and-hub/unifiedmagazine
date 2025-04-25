@@ -35,6 +35,7 @@ class UserSeeader extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
             'deleted_at' => null,
+            'role' => '1'
         ];
         // dd($data);
         User::insert($data);

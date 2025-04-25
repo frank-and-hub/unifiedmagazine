@@ -68,24 +68,28 @@ if (!function_exists('auth_user_tech_title')) {
         return $data;
     }
 }
+
 if(!function_exists('app_password')){
     function app_password(){
         $data = \App\Models\Login::whereUserId(Auth::user()->id)->first();
         return $data ? $data->password : null;
     }
 }
+
 if(!function_exists('auth_name')){
     function auth_name(){
-        $data = ucwords(Auth::user()->name);
+        $data = ucwords(Auth::user()?->name);
         return $data;
     }
 }
+
 if(!function_exists('url_last')){
     function url_last($url){
         $data = collect(explode('/', $url))->last();
         return $data;
     }
 }
+
 if(!function_exists('authrole')){
     function authrole(){
         $data = (Auth::user()->role) == '1';
